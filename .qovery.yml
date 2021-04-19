@@ -1,0 +1,11 @@
+---
+application:
+  name: "botmindapp"
+  project: "BotmindExercice"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-botmindapp"
+  routes:
+  - application_name: "botmindapp"
+    paths:
+    - "/*"
