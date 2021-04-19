@@ -1,0 +1,41 @@
+<div fxLayoutAlign="center">
+  <mat-card fxLayout="column" fxFlex="50">
+    <mat-card-header *ngIf="tweet">
+      <div mat-card-avatar fxLayoutAlign="center center">
+        <mat-icon>person</mat-icon>
+      </div>
+      <div fxLayout="column">
+        <h2 class="margin-up-down-0">{{ tweet.user.name }}</h2>
+        <span>{{ tweet.createdAt | date:shortDate }}</span>
+      </div>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form *ngIf="editorForm && isEditing" [formGroup]="editorForm" (submit)="submitForm()">
+        <div>
+          <h3>Nouveau tweet</h3>
+        </div>
+
+        <div class="NgxEditor__Wrapper">
+          <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+          <ngx-editor [editor]="editor" placeholder="Quoi de neuf aujourd'hui ?" formControlName="message">
+          </ngx-editor>
+        </div>
+
+        <div class="margin-up-down-1" fxLayoutAlign="end" fxLayoutGap="10px">
+          <button mat-raised-button type="submit" class="green-button" [disabled]="!editorForm.valid">Publier</button>
+          <button mat-raised-button type="button" color="warn" *ngIf="mode !== 'new'"
+            (click)="cancelEditor()">Annuler</button>
+        </div>
+      </form>
+
+      <div *ngIf="!isEditing && !mode && tweet">
+        <p [innerHTML]="tweet.message"></p>
+      </div>
+      <mat-card-actions *ngIf="mode !== 'new' && !isEditing" fxLayoutAlign="end">
+        <button mat-button color="primary" (click)="setEditor()">Editer</button>
+        <button mat-button color="warn" (click)="deleteTweet()">Supprimer</button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+</div>

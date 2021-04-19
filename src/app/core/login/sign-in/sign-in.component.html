@@ -1,0 +1,36 @@
+<div fxLayoutAlign="center">
+  <mat-card fxLayout="column" fxFlex="50">
+    <mat-card-header fxLayoutAlign="center">
+      <mat-card-title>Se connecter</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form *ngIf="signInForm" fxLayout="column" [formGroup]="signInForm" (submit)="submitForm()">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email">
+          <mat-error *ngIf="signInForm.controls.email.hasError('required')">
+            L'addresse email est requise
+          </mat-error>
+          <mat-error
+            *ngIf="signInForm.controls.email.hasError('email') && !signInForm.controls.email.hasError('required')">
+            L'adresse email doit etre valide
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Mot de passe</mat-label>
+          <input matInput type="password" formControlName="password">
+          <mat-error *ngIf="signInForm.controls.password.hasError('required')">
+            Le mot de passe est requis
+          </mat-error>
+        </mat-form-field>
+
+        <span fxLayoutAlign="end">
+          <button mat-raised-button class="green-button" [disabled]="!signInForm.valid || isSubmitting">Se
+            connecter</button>
+        </span>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

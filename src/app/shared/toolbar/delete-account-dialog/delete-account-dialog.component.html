@@ -1,0 +1,4 @@
+<mat-slide-toggle #evenData>Meme les donnée ?</mat-slide-toggle>
+
+<button mat-raised-button [mat-dialog-close]="{confirm: true, data: evenData.checked}">Supprimer</button>
+<button mat-raised-button mat-dialog-close>Quitter</button>

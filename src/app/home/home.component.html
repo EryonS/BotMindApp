@@ -1,0 +1,9 @@
+<div fxLayoutGap="15px">
+  <div fxLayoutAlign="center">
+    <h1 class="white">Bonjour : {{ authService.getUserData().name }}</h1>
+  </div>
+
+  <app-tweet mode="new"></app-tweet>
+
+  <app-tweet *ngFor="let tweet of tweets" [tweet]='tweet'></app-tweet>
+</div>

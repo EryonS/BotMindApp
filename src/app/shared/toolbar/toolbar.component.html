@@ -1,0 +1,12 @@
+<mat-toolbar fxLayout="row" color="primary" fxLayoutAlign="space-between center">
+  <span fxFlex="33"></span>
+  <span fxFlex="33" fxLayoutAlign="center">BotMind Twitter</span>
+  <span fxFlex="33" fxLayoutAlign="end" fxLayoutGap="10px" *ngIf="!authService.getIsAuth()">
+    <button mat-stroked-button type="button" routerLink="/sign-up">S'inscrire</button>
+    <button mat-stroked-button type="button" routerLink="/sign-in">Se connecter</button>
+  </span>
+  <span fxFlex="33" fxLayoutAlign="center" *ngIf="authService.getIsAuth()" fxLayoutGap="10px">
+    <button mat-stroked-button type="button" (click)="deleteAccount()">Supprimer mon compte</button>
+    <button mat-stroked-button type="button" (click)="logout()">Se deconnecter</button>
+  </span>
+</mat-toolbar>
