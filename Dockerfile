@@ -9,4 +9,4 @@ RUN npm run build
 ### STAGE 2: Run ###
 FROM nginx:1.19-alpine
 EXPOSE 80
-COPY --from=build /usr/src/app/dist/my-angular-app /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/app /usr/share/nginx/html
