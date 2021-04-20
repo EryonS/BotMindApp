@@ -4,10 +4,18 @@
 
 export const environment = {
   production: false,
-  LOGIN_URL: 'http://localhost:1000/login',
-  HOME_URL: 'http://localhost:1000/home',
-  TWEET_URL: 'http://localhost:1000/tweet',
+  LOGIN_URL: 'https://main-botmins-mipug91y2fga6d9l-gtw.qovery.io/login',
+  HOME_URL: 'https://main-botmins-mipug91y2fga6d9l-gtw.qovery.io/home',
+  TWEET_URL: 'https://main-botmins-mipug91y2fga6d9l-gtw.qovery.io/tweet',
 };
+
+// export const environment = {
+//   production: false,
+//   LOGIN_URL: 'https://main-botmins-mipug91y2fga6d9l-gtw.qovery.io/login',
+//   HOME_URL: 'https://main-botmins-mipug91y2fga6d9l-gtw.qovery.io/home',
+//   TWEET_URL: 'https://main-botmins-mipug91y2fga6d9l-gtw.qovery.io/tweet',
+// };
+
 
 /*
  * For easier debugging in development mode, you can import the following file
