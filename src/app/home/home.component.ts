@@ -14,19 +14,21 @@ export class HomeComponent implements OnDestroy {
 
   tweetSubscription: Subscription;
 
+  loading = false;
+
   constructor(
     private tweetService: TweetService,
     public authService: AuthService
   ) {
     Promise.all([this.getLatestTweet()]).then(() => {
-      window.addEventListener('scroll', () => {
+      window.addEventListener('wheel', () => {
         this.checkIfBottom();
       });
     });
   }
 
   ngOnDestroy() {
-    window.removeEventListener('scroll', () => {});
+    window.removeEventListener('wheel', () => {});
     this.tweetSubscription.unsubscribe();
   }
 
@@ -43,11 +45,11 @@ export class HomeComponent implements OnDestroy {
     this.tweetService.getMoreTweets();
   }
 
-  checkIfBottom() {
+  async checkIfBottom() {
     const distanceFromBottom =
       document.body.scrollHeight - window.innerHeight - window.scrollY;
 
-    if (distanceFromBottom <= 50) {
+    if (distanceFromBottom <= 10) {
       this.getMoreTweet();
     }
   }

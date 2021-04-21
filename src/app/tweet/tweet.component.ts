@@ -2,6 +2,7 @@ import { EventEmitter } from '@angular/core';
 import { Component, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Editor, Toolbar, Validators } from 'ngx-editor';
+import { AuthService } from '../core/auth/auth.service';
 import { ITweet } from '../shared/model/tweet';
 import { TweetService } from './tweet.service';
 
@@ -19,16 +20,23 @@ export class TweetComponent implements OnInit, OnDestroy {
 
   editor: Editor;
 
+  canEdit = false;
+
   toolbar: Toolbar = [
     ['bold', 'italic'],
     ['underline', 'strike'],
+    ['link', 'image'],
   ];
 
   editorForm: FormGroup;
 
   isSubmitting = false;
 
-  constructor(private _fb: FormBuilder, private tweetService: TweetService) {
+  constructor(
+    private _fb: FormBuilder,
+    private tweetService: TweetService,
+    private authService: AuthService
+  ) {
     this.editorForm = this._fb.group({
       message: ['', [Validators.required(), Validators.minLength(4)]],
     });
@@ -41,6 +49,11 @@ export class TweetComponent implements OnInit, OnDestroy {
     }
     if (this.tweet) {
       this.patchEditForm();
+      const userData = this.authService.getUserData();
+
+      if (userData._id.toString() === this.tweet.user._id.toString()) {
+        this.canEdit = true;
+      }
     }
   }
 

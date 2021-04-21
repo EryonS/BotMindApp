@@ -4,18 +4,17 @@
 
 export const environment = {
   production: false,
-  LOGIN_URL: 'https://botmind-api.herokuapp.com/login',
-  HOME_URL: 'https://botmind-api.herokuapp.com/home',
-  TWEET_URL: 'https://botmind-api.herokuapp.com/tweet',
+  LOGIN_URL: 'http://localhost:8080/login',
+  HOME_URL: 'http://localhost:8080/home',
+  TWEET_URL: 'http://localhost:8080/tweet',
 };
 
 // export const environment = {
 //   production: false,
-//   LOGIN_URL: 'https://https://botmind-api.herokuapp.com/login',
-//   HOME_URL: 'https://https://botmind-api.herokuapp.com/home',
-//   TWEET_URL: 'https://https://botmind-api.herokuapp.com/tweet',
+//   LOGIN_URL: 'https://http:/localhost:8080/login',
+//   HOME_URL: 'https://http:/localhost:8080/home',
+//   TWEET_URL: 'https://http:/localhost:8080/tweet',
 // };
-
 
 /*
  * For easier debugging in development mode, you can import the following file

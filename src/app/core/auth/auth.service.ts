@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { decode } from 'punycode';
 
 @Injectable()
 export class AuthService {
@@ -48,6 +49,7 @@ export class AuthService {
     const decoded = this.helper.decodeToken(this.token);
 
     this.userData = {
+      _id: decoded._id,
       name: decoded.name,
       email: decoded.email,
     };

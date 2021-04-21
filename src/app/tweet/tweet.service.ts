@@ -10,6 +10,8 @@ export class TweetService {
   tweetSubject = new Subject<ITweet[]>();
   tweetObservable = this.tweetSubject.asObservable();
 
+  stop = false;
+
   constructor(private _http: HttpClient) {}
 
   latestTweet() {
@@ -22,12 +24,16 @@ export class TweetService {
   }
 
   getMoreTweets() {
+    if (this.stop) {
+      return;
+    }
     return this._http
-      .get<ITweet[]>(
-        `${environment.TWEET_URL}/getMoreTweets/${this.tweets.length}`
-      )
-      .subscribe((tweets) => {
-        this.tweets.push(...tweets);
+      .get<any>(`${environment.TWEET_URL}/getMoreTweets/${this.tweets.length}`)
+      .subscribe(async (response) => {
+        if (response.message === 'stop') {
+          return (this.stop = true);
+        }
+        await this.tweets.push(...response.tweets);
         this.tweetSubject.next(this.tweets);
       });
   }
@@ -49,8 +55,13 @@ export class TweetService {
   }
 
   deleteTweet(tweetId: string) {
-    return this._http
+    this._http
       .delete(`${environment.TWEET_URL}/delete-tweet/${tweetId}`)
-      .toPromise();
+      .subscribe(() => {
+        this.tweets = this.tweets.filter(
+          (tweet) => tweet._id.toString() !== tweetId
+        );
+        this.tweetSubject.next(this.tweets);
+      });
   }
 }

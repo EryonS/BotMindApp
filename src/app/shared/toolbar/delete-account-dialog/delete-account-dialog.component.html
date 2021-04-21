@@ -1,4 +1,18 @@
-<mat-slide-toggle #evenData>Meme les donnée ?</mat-slide-toggle>
+<div fxLayout="column">
+  <div fxLayout="column" fxLayoutAlign="start center">
+    <h3>
+      Vous êtes sur le point de supprimer votre compte, cette action est irréversible, souhaitez-vous vraiment supprimer
+      votre compte ?
+    </h3>
+    <p>
+      Cochez le slider suivant pour supprimer également vos tweets.
+    </p>
+    <mat-slide-toggle #evenData>Meme les données ?</mat-slide-toggle>
+  </div>
 
-<button mat-raised-button [mat-dialog-close]="{confirm: true, data: evenData.checked}">Supprimer</button>
-<button mat-raised-button mat-dialog-close>Quitter</button>
+  <div fxLayoutAlign="end" fxLayoutGap="10px">
+    <button mat-raised-button class="green-button"
+      [mat-dialog-close]="{confirm: true, data: evenData.checked}">Supprimer</button>
+    <button mat-raised-button color="warn" mat-dialog-close>Quitter</button>
+  </div>
+</div>

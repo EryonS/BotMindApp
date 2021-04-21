@@ -6,13 +6,13 @@
       </div>
       <div fxLayout="column">
         <h2 class="margin-up-down-0">{{ tweet.user.name }}</h2>
-        <span>{{ tweet.createdAt | date:shortDate }}</span>
+        <span>{{ tweet.createdAt | date:'d/M/Y' }}</span>
       </div>
     </mat-card-header>
 
     <mat-card-content>
       <form *ngIf="editorForm && isEditing" [formGroup]="editorForm" (submit)="submitForm()">
-        <div>
+        <div *ngIf="mode === 'new'">
           <h3>Nouveau tweet</h3>
         </div>
 
@@ -32,7 +32,7 @@
       <div *ngIf="!isEditing && !mode && tweet">
         <p [innerHTML]="tweet.message"></p>
       </div>
-      <mat-card-actions *ngIf="mode !== 'new' && !isEditing" fxLayoutAlign="end">
+      <mat-card-actions *ngIf="mode !== 'new' && !isEditing && canEdit" fxLayoutAlign="end">
         <button mat-button color="primary" (click)="setEditor()">Editer</button>
         <button mat-button color="warn" (click)="deleteTweet()">Supprimer</button>
       </mat-card-actions>
