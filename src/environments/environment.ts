@@ -4,16 +4,16 @@
 
 export const environment = {
   production: false,
-  LOGIN_URL: 'https://main-botmins-mipug91y2fga6d9l-gtw.qovery.io/login',
-  HOME_URL: 'https://main-botmins-mipug91y2fga6d9l-gtw.qovery.io/home',
-  TWEET_URL: 'https://main-botmins-mipug91y2fga6d9l-gtw.qovery.io/tweet',
+  LOGIN_URL: 'https://botmind-api.herokuapp.com/login',
+  HOME_URL: 'https://botmind-api.herokuapp.com/home',
+  TWEET_URL: 'https://botmind-api.herokuapp.com/tweet',
 };
 
 // export const environment = {
 //   production: false,
-//   LOGIN_URL: 'https://main-botmins-mipug91y2fga6d9l-gtw.qovery.io/login',
-//   HOME_URL: 'https://main-botmins-mipug91y2fga6d9l-gtw.qovery.io/home',
-//   TWEET_URL: 'https://main-botmins-mipug91y2fga6d9l-gtw.qovery.io/tweet',
+//   LOGIN_URL: 'https://https://botmind-api.herokuapp.com/login',
+//   HOME_URL: 'https://https://botmind-api.herokuapp.com/home',
+//   TWEET_URL: 'https://https://botmind-api.herokuapp.com/tweet',
 // };
 
 
