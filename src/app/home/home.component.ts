@@ -50,11 +50,11 @@ export class HomeComponent implements OnDestroy {
     const distanceFromBottom =
       document.body.scrollHeight - window.innerHeight - window.scrollY;
 
-    if (distanceFromBottom <= 50 && !this.loading) {
+    if (distanceFromBottom <= 20 && !this.loading) {
       this.loading = true;
       setTimeout(() => {
         this.getMoreTweet();
-      }, 100);
+      }, 1000);
     }
   }
 }
