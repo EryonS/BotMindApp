@@ -1,0 +1,27 @@
+{
+  "toolbar": {
+    "signUp": "Sign up",
+    "signIn": "Sign in",
+    "logout": "Logout",
+    "deleteAcc": "Delete my account",
+    "langage": "Langage"
+  },
+  "home": {
+    "welcome": "Welcome"
+  },
+  "tweet": {
+    "new": "New tweet",
+    "placeholder": "What's up?",
+    "publish": "Publish",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "deleteAccount": {
+    "confirmText": "You are about to delete your account, this action is irreversible, do you really want to delete your account?",
+    "dataText": "Check the following slider to delete your tweets too.",
+    "dataSlider": "Delete my datas",
+    "delete": "Delete my accoun",
+    "cancel": "Cancel"
+  }
+}

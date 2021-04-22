@@ -1,18 +1,20 @@
 <div fxLayout="column">
   <div fxLayout="column" fxLayoutAlign="start center">
     <h3>
+      {{ 'deleteAccount.confirmText' | translate }}
       Vous êtes sur le point de supprimer votre compte, cette action est irréversible, souhaitez-vous vraiment supprimer
       votre compte ?
     </h3>
     <p>
+      {{ 'deleteAccount.dataText' | translate }}
       Cochez le slider suivant pour supprimer également vos tweets.
     </p>
-    <mat-slide-toggle #evenData>Meme les données ?</mat-slide-toggle>
+    <mat-slide-toggle #evenData>{{ 'deleteAccount.dataSlider' | translate }}</mat-slide-toggle>
   </div>
 
   <div fxLayoutAlign="end" fxLayoutGap="10px">
-    <button mat-raised-button class="green-button"
-      [mat-dialog-close]="{confirm: true, data: evenData.checked}">Supprimer</button>
-    <button mat-raised-button color="warn" mat-dialog-close>Quitter</button>
+    <button mat-raised-button class="green-button" [mat-dialog-close]="{confirm: true, data: evenData.checked}">{{
+      'deleteAccount.delete' | translate }}</button>
+    <button mat-raised-button color="warn" mat-dialog-close>{{ 'deleteAccount.cancel' | translate }}</button>
   </div>
 </div>

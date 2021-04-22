@@ -41,16 +41,20 @@ export class HomeComponent implements OnDestroy {
     this.tweetService.latestTweet();
   }
 
-  getMoreTweet() {
-    this.tweetService.getMoreTweets();
+  async getMoreTweet() {
+    await this.tweetService.getMoreTweets();
+    this.loading = false;
   }
 
   async checkIfBottom() {
     const distanceFromBottom =
       document.body.scrollHeight - window.innerHeight - window.scrollY;
 
-    if (distanceFromBottom <= 10) {
-      this.getMoreTweet();
+    if (distanceFromBottom <= 50 && !this.loading) {
+      this.loading = true;
+      setTimeout(() => {
+        this.getMoreTweet();
+      }, 100);
     }
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { DeleteAccountDialogComponent } from './delete-account-dialog/delete-account-dialog.component';
 
@@ -9,7 +10,18 @@ import { DeleteAccountDialogComponent } from './delete-account-dialog/delete-acc
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  constructor(private _matDialog: MatDialog, public authService: AuthService) {}
+  langages = ['fr', 'en'];
+
+  constructor(
+    public authService: AuthService,
+    private _matDialog: MatDialog,
+    private translateService: TranslateService
+  ) {}
+
+  switchLang(lang: string) {
+    this.translateService.use(lang);
+    localStorage.setItem('lang', lang);
+  }
 
   deleteAccount() {
     const dialog = this._matDialog.open(DeleteAccountDialogComponent);

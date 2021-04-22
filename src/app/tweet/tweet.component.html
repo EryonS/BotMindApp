@@ -13,19 +13,19 @@
     <mat-card-content>
       <form *ngIf="editorForm && isEditing" [formGroup]="editorForm" (submit)="submitForm()">
         <div *ngIf="mode === 'new'">
-          <h3>Nouveau tweet</h3>
+          <h3>{{ 'tweet.new' | translate }}</h3>
         </div>
 
         <div class="NgxEditor__Wrapper">
           <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
-          <ngx-editor [editor]="editor" placeholder="Quoi de neuf aujourd'hui ?" formControlName="message">
+          <ngx-editor [editor]="editor" placeholder="{{ 'tweet.placeholder' | translate }}" formControlName="message">
           </ngx-editor>
         </div>
 
         <div class="margin-up-down-1" fxLayoutAlign="end" fxLayoutGap="10px">
-          <button mat-raised-button type="submit" class="green-button" [disabled]="!editorForm.valid">Publier</button>
+          <button mat-raised-button type="submit" class="green-button" [disabled]="!editorForm.valid">{{ 'tweet.publish' | translate }}</button>
           <button mat-raised-button type="button" color="warn" *ngIf="mode !== 'new'"
-            (click)="cancelEditor()">Annuler</button>
+            (click)="cancelEditor()">{{ 'tweet.cancel' | translate }}</button>
         </div>
       </form>
 
@@ -33,8 +33,8 @@
         <p [innerHTML]="tweet.message"></p>
       </div>
       <mat-card-actions *ngIf="mode !== 'new' && !isEditing && canEdit" fxLayoutAlign="end">
-        <button mat-button color="primary" (click)="setEditor()">Editer</button>
-        <button mat-button color="warn" (click)="deleteTweet()">Supprimer</button>
+        <button mat-button color="primary" (click)="setEditor()">{{ 'tweet.edit' | translate }}</button>
+        <button mat-button color="warn" (click)="deleteTweet()">{{ 'tweet.delete' | translate }}</button>
       </mat-card-actions>
     </mat-card-content>
   </mat-card>

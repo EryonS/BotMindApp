@@ -24,6 +24,8 @@
     "@angular/platform-browser-dynamic": "~11.2.7",
     "@angular/router": "~11.2.7",
     "@auth0/angular-jwt": "^5.0.2",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "ngx-editor": "^8.1.1",

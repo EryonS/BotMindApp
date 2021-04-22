@@ -1,6 +1,6 @@
 <div fxLayoutGap="15px">
   <div fxLayoutAlign="center">
-    <h1 class="white">Bonjour : {{ authService.getUserData().name }}</h1>
+    <h1 class="white">{{ 'home.welcome' | translate }} : {{ authService.getUserData().name }}</h1>
   </div>
 
   <app-tweet mode="new"></app-tweet>

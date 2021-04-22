@@ -1,0 +1,27 @@
+{
+  "toolbar": {
+    "signUp": "S'inscrire",
+    "signIn": "Se connecter",
+    "logout": "Se deconnecter",
+    "deleteAcc": "Supprimer mon compte",
+    "langage": "Langue"
+  },
+  "home": {
+    "welcome": "Bienvenue"
+  },
+  "tweet": {
+    "new": "Nouveau tweet",
+    "placeholder": "Quoi de neuf aujourd'hui ?",
+    "publish": "Publier",
+    "cancel": "Annuler",
+    "edit": "Modifier",
+    "delete": "Supprimer"
+  },
+  "deleteAccount": {
+    "confirmText": "Vous êtes sur le point de supprimer votre compte, cette action est irréversible, souhaitez-vous vraiment supprimer votre compte ?",
+    "dataText": "Cochez le slider suivant pour supprimer également vos tweets.",
+    "dataSlider": "Supprimer mes données",
+    "delete": "Supprimer mon compte",
+    "cancel": "Annuler"
+  }
+}
