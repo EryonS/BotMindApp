@@ -1,50 +1,50 @@
 <div fxLayoutAlign="center">
   <mat-card fxLayout="column" fxFlex="50">
     <mat-card-header fxLayoutAlign="center">
-      <mat-card-title>S'inscrire</mat-card-title>
+      <mat-card-title>{{ 'signUp.signUp' | translate }}</mat-card-title>
     </mat-card-header>
 
     <mat-card-content>
       <form *ngIf="signUpForm" fxLayout="column" fxLayoutGap="10px" [formGroup]="signUpForm" (submit)="submitForm()">
         <mat-form-field>
-          <mat-label>Nom d'utilisateur</mat-label>
+          <mat-label>{{ 'signUp.userName' | translate }}</mat-label>
           <input matInput type="text" formControlName="name">
           <mat-error *ngIf="signUpForm.controls.name.hasError('required')">
-            Le nom d'utilisateur est requis
+            {{ 'signUp.userNameRequired' | translate }}
           </mat-error>
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label>Email</mat-label>
+          <mat-label>{{ 'signUp.email' | translate }}</mat-label>
           <input matInput type="email" formControlName="email">
           <mat-error *ngIf="signUpForm.controls.email.hasError('required')">
-            L'addresse email est requise
+            {{ 'signUp.emailRequired' | translate }}
           </mat-error>
           <mat-error
             *ngIf="signUpForm.controls.email.hasError('email') && !signUpForm.controls.email.hasError('required')">
-            L'adresse email doit etre valide
+            {{ 'signUp.emailValid' | translate }}
           </mat-error>
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label>Mot de passe</mat-label>
+          <mat-label>{{ 'signUp.password' | translate }}</mat-label>
           <input matInput type="password" formControlName="password">
           <mat-error *ngIf="signUpForm.controls.password.hasError('required')">
-            Un mot de passe est requis
+            {{ 'signUp.passwordRequired' | translate }}
           </mat-error>
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label>Confirmation mot de passe</mat-label>
+          <mat-label>{{ 'signUp.cpassword' | translate }}</mat-label>
           <input matInput type="password" formControlName="cpassword" [errorStateMatcher]="passwordMatcher">
           <mat-error *ngIf="signUpForm.hasError('notSame')">
-            Les mots de passe ne sont pas identiques
+            {{ 'signUp.passwordNotSame' | translate }}
           </mat-error>
         </mat-form-field>
 
         <span fxLayoutAlign="end">
-          <button mat-raised-button class="green-button"
-            [disabled]="!signUpForm.valid || isSubmitting">S'inscrire</button>
+          <button mat-raised-button class="green-button" [disabled]="!signUpForm.valid || isSubmitting">
+            {{ 'signUp.signUp' | translate }}</button>
         </span>
       </form>
     </mat-card-content>

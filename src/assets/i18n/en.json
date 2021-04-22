@@ -1,4 +1,24 @@
 {
+  "signIn": {
+    "login": "Login",
+    "email": "Email",
+    "emailRequired": "Email is required",
+    "emailValid": "Email is invalid",
+    "password": "Password",
+    "passwordRequired": "Password is required"
+  },
+  "signUp": {
+    "signUp": "Sign up",
+    "userName": "User name",
+    "userNameRequired": "User name is required",
+    "email": "Email",
+    "emailRequired": "Email is required",
+    "emailValid": "Email is invalid",
+    "password": "Password",
+    "passwordRequired": "Password is required",
+    "cpassword": "Password confirmation",
+    "passwordNotSame": "Passwords are not the same."
+  },
   "toolbar": {
     "signUp": "Sign up",
     "signIn": "Sign in",

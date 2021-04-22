@@ -1,4 +1,24 @@
 {
+  "signIn": {
+    "login": "Se connecter",
+    "email": "Email",
+    "emailRequired": "L'adresse email est requise",
+    "emailValid": "L'adresse email est invalide",
+    "password": "Mot de passe",
+    "passwordRequired": "Le mot de passe est requis"
+  },
+  "signUp": {
+    "signUp": "S'inscrire",
+    "userName": "Nom d'utilisateur",
+    "userNameRequired": "Le nom d'utilisateur est requis",
+    "email": "Email",
+    "emailRequired": "L'adresse email est requise",
+    "emailValid": "L'adresse email est invalide",
+    "password": "Mot de passe",
+    "passwordRequired": "Le mot de passe est requis",
+    "cpassword": "Confirmation du mot de passe",
+    "passwordNotSame": "Les mots de passe ne sont pas identiques."
+  },
   "toolbar": {
     "signUp": "S'inscrire",
     "signIn": "Se connecter",
